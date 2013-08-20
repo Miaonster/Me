@@ -9,17 +9,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Writedown</title>
+    <link rel="stylesheet" href="./js/CodeMirror/lib/codemirror.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./js/pretty/prettify.css" />
-    <link rel="stylesheet" href="js/codemirror11/lib/codemirror.css" />
     <script src="./js/require.js"></script>
 </head>
 <body>
 
     <div id="tips"></div>
 
-    <div id="toolbar">
-        <span id="markdown" class="btn on" data-action="origin">Markdown</span>
+    <div id="toolbar" class="toolbar">
+        <span id="split" class="btn on" data-action="splitView">Split</span>
+        <span id="markdown" class="btn" data-action="origin">Markdown</span>
         <span id="covert" class="btn" data-action="preview">Preview</span>
         <span id="viewHTML" class="btn" data-action="viewHTML">HTML</span>
         <span id="copy" class="btn" data-action="copy">Copy HTML</span>
@@ -27,16 +28,16 @@
         <small id="status"></small>
     </div>
 
-    <div id="editor"><textarea></textarea></div>
-    <div id="preview" class="typo"></div>
-    <a id="dashboard" data-action="go" href="./settings.html">Settings</a>
+    <div id="editor" class="editor"><textarea></textarea></div>
+    <div id="preview" class="preview typo"><div id="js-preview" class="actual-preview"></div></div>
+    <a id="dashboard" class="dashboard" data-action="go" href="./settings.html">Settings</a>
 
     <script type="text/javascript" src="./js/jquery.2.0.b-min.js"></script>
-    <script type="text/javascript" src="js/codemirror11/lib/codemirror.js"></script>
-    <script type="text/javascript" src="js/codemirror11/addon/mode/overlay.js"></script>
-    <script type="text/javascript" src="js/codemirror11/mode/markdown/markdown.js"></script>
-    <script type="text/javascript" src="js/codemirror11/mode/xml/xml.js"></script>
-    <script type="text/javascript" src="js/codemirror11/mode/gfm/gfm.js"></script>
+    <script type="text/javascript" src="./js/CodeMirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="./js/CodeMirror/addon/mode/overlay.js"></script>
+    <script type="text/javascript" src="./js/CodeMirror/mode/markdown/markdown.js"></script>
+    <script type="text/javascript" src="./js/CodeMirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="./js/CodeMirror/mode/gfm/gfm.js"></script>
     <script type="text/javascript" src="./js/pretty/prettify.js"></script>
     <script type="text/javascript" src="./js/mousetrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>

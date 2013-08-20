@@ -4,11 +4,12 @@
  * @license: MIT
  */
 
-var App, $preview, $toolbar, editor, $code, writedown;
+var App, mode, $body, $preview, $toolbar, editor, $code, writedown;
 
+$body = $('body');
 $code = $('#editor');
 $textarea = $('textarea', $code);
-$preview = $('#preview');
+$preview = $('#js-preview');
 $toolbar = $('#toolbar');
 $tips = $('#tips');
 
@@ -41,15 +42,10 @@ console.log($textarea)
 // set history from localstory
 $textarea.val(localStorage.getItem('writedown'));
 
-// highlight markdown
-editor = CodeMirror.fromTextArea($textarea.get(0), {
-  mode: 'gfm',
-  // lineNumbers: true,
-  theme: "default"
-});
-
 
 App = function(){
+  this.mode = '';
+  this.timer = null;
   this.init();
 };
 
@@ -87,6 +83,18 @@ App.prototype.viewHTML = function() {
   $preview.show('fast');
 };
 
+App.prototype.splitView = function() {
+  $body.addClass('split');
+  $code.addClass('split-item').show('fast');
+  $preview.addClass('split-item').html(this.html()).show('fast');
+};
+
+App.prototype.splitViewOff = function() {
+  $body.removeClass('split');
+  $code.removeClass('split-item');
+  $preview.removeClass('split-item');
+};
+
 App.prototype.copy = function() {
   Clipboard.set(this.html(), 'text');
   $tips.html('<span>HTML is copied!</span>').show('fast');
@@ -96,9 +104,8 @@ App.prototype.copy = function() {
 };
 
 App.prototype.init = function() {
-  var quit, that;
-
-  that = this;
+  var quit,
+      that = this;
 
   // save data to local disk before close
   quit = function() {
@@ -114,22 +121,53 @@ App.prototype.init = function() {
 
   //TODO: keep on focus
 
+  // highlight markdown
+  editor = CodeMirror.fromTextArea($textarea.get(0), {
+    mode: 'gfm',
+    lineWrapping: true,
+    //lineNumbers: true,
+    theme: "default",
+
+    onKeyEvent: function(editor, event) {
+      if (that.mode === 'splitView') {
+        window.clearTimeout(that.timer);
+        that.timer = window.setTimeout(function() {
+          $preview.html(that.html()).show('fast');
+          prettyPrint();
+        }, 300);
+      }
+    }
+  });
 }
 
 writedown = new App();
 
+
+// button status
 $toolbar.on('click', '.btn', function() {
+  var action,
+      previousAction = $('.on').data('action');
 
-  // button status
   $('.btn').removeClass('on');
-  if(/origin|preview|viewHTML/.test($(this).data('action'))) $(this).addClass('on');
-  var action = $(this).data('action');
 
+  if (/splitView|origin|preview|viewHTML/.test($(this).data('action'))) {
+    $(this).addClass('on');
+  }
+
+  // previousAction
+  if (typeof writedown[previousAction + 'Off'] !== 'undefined') {
+    writedown[previousAction + 'Off']();
+  }
+
+  action = $(this).data('action');
   // action
   writedown[action]();
 
+  // mode
+  writedown.mode = action;
+
   // highlight code
-  if(/preview|viewHTML/.test(action)) prettyPrint();
+  if(/splitView|preview|viewHTML/.test(action)) prettyPrint();
 });
 
 /**
@@ -187,3 +225,4 @@ Mousetrap.bindGlobal(['command+,'], function() {
   window.location.href = './settings.html';
 });
 
+$('#split').click();

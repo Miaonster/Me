@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Writedown</title>
+    <title>Me</title>
     <link rel="stylesheet" href="./js/CodeMirror/lib/codemirror.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./js/pretty/prettify.css" />
@@ -30,9 +30,12 @@
 
     <div id="editor" class="editor"><textarea></textarea></div>
     <div id="preview" class="preview typo"><div id="js-preview" class="actual-preview"></div></div>
-    <a id="dashboard" class="dashboard" data-action="go" href="./settings.html">Settings</a>
+    <a id="dashboard" class="dashboard" data-action="go" style="display:none" href="./settings.html">Settings</a>
 
-    <script type="text/javascript" src="./js/jquery.2.0.b-min.js"></script>
+    <input type="file" id="open" style="display:none"/>
+    <input type="file" id="saveas" style="display:none" nwsaveas/>
+
+    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="./js/CodeMirror/lib/codemirror.js"></script>
     <script type="text/javascript" src="./js/CodeMirror/addon/mode/overlay.js"></script>
     <script type="text/javascript" src="./js/CodeMirror/mode/markdown/markdown.js"></script>
@@ -40,6 +43,6 @@
     <script type="text/javascript" src="./js/CodeMirror/mode/gfm/gfm.js"></script>
     <script type="text/javascript" src="./js/pretty/prettify.js"></script>
     <script type="text/javascript" src="./js/mousetrap.min.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

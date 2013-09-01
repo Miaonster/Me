@@ -9,21 +9,15 @@ Markdown Editor for Me.
 
 ### Shortcuts
 
-* </kbd>⌘⇧1</kbd> Split View
-* </kbd>⌘⇧2</kbd> Preview
-* </kbd>⌘⇧3</kbd> Editor
-* </kbd>⌘⇧4</kbd> HTML
-
-
-* </kbd>⌘⇧c</kbd> Copy as HTML
-
-
-* </kbd>⌘o</kbd> Open File
-* </kbd>⌘s</kbd> Save File
-* </kbd>⌘⇧s</kbd> Save as
-
-
-* </kbd>⌘,</kbd> Preferencs
+* <kbd>⌘⇧1</kbd> Split View
+* <kbd>⌘⇧2</kbd> Preview
+* <kbd>⌘⇧3</kbd> Editor
+* <kbd>⌘⇧4</kbd> HTML
+* <kbd>⌘⇧c</kbd> Copy as HTML
+* <kbd>⌘o</kbd> Open File
+* <kbd>⌘s</kbd> Save File
+* <kbd>⌘⇧s</kbd> Save as
+* <kbd>⌘,</kbd> Preferencs
 
 ### Preview
 

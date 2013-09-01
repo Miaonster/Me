@@ -63,15 +63,6 @@ writedown = {
       localStorage.setItem('writedown', that.md());
     };
 
-    name = gui.App.argv[0];
-
-    if (name && fs.existsSync(name)) {
-      data = fs.readFileSync(name);
-      $textarea.val(data);
-    } else {
-      $textarea.val(localStorage.getItem('writedown'));
-    }
-
     // keep focus
     $(document).on('click', function() {
       editor.focus();
@@ -98,6 +89,16 @@ writedown = {
       }
     });
 
+    name = gui.App.argv[0];
+
+    if (name && fs.existsSync(name)) {
+      this.path = name;
+      data = fs.readFileSync(name).toString();
+    } else {
+      data = localStorage.getItem('writedown');
+    }
+
+    editor.setValue(data.toString());
 
     // button status
     $toolbar.on('click', '.btn', function() {

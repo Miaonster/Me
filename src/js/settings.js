@@ -1,12 +1,7 @@
-/**
- * @author: Sofish Lin
- * @site: http://sofish.de
- * @license: MIT
- */
-
 $(function(){
 
-  var $settings = $('input');
+  var $settings = $('input'),
+      $preview = $('#preview');
 
   // set default value
   $preview.on('change', 'input', function() {

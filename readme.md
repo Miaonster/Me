@@ -1,35 +1,34 @@
-# Writedown
+# Me
 
-![writedown logo](https://raw.github.com/sofish/writedown/master/src/img/mark.png)
+Markdown Editor for Me.
 
-Stop thinking, start creating.
+### Downloads
 
-### 0. Downloads
+* Me.app.zip-1.0.0.app [百度云盘](http://pan.baidu.com/share/link?shareid=1844251195&uk=2369229967) [Dropbox](https://www.dropbox.com/s/ioq77qltc31hfo0/Me.app.zip)
 
-- Writedown.0.2-beta.app [微云](http://url.cn/CvQO7T) [Droplr](http://d.pr/f/xWdN)
-- Writedown.0.1-beta.app [微云](http://url.cn/DZwQZQ) [Droplr](http://d.pr/f/1oPa)
 
-### 1. How to run the source
+### Shortcuts
 
-run it with [node-webkit](https://github.com/rogerwang/node-webkit)
+* </kbd>⌘⇧1</kbd> Split View
+* </kbd>⌘⇧2</kbd> Preview
+* </kbd>⌘⇧3</kbd> Editor
+* </kbd>⌘⇧4</kbd> HTML
 
-### 2. Syntax
 
-[Github flavor markdown](http://github.github.com/github-flavored-markdown/) is supported.
+* </kbd>⌘⇧c</kbd> Copy as HTML
 
-### 3. Keyboard Shortcut
 
-- Preview: `command` + `shift` + `p`
-- Back to Editor: `ESC` or `command` + `shift` + `b`
-- View HTML Source: `command` + `shift` + `h`
-- Copy HTML: `command` + `shift` + `c`
-- Save: `command` + `s`
-- Settings: `command` + `,`
+* </kbd>⌘o</kbd> Open File
+* </kbd>⌘s</kbd> Save File
+* </kbd>⌘⇧s</kbd> Save as
 
-### 4. Preview
 
-![writedown preview](http://dribbble.s3.amazonaws.com/users/9545/screenshots/1013357/_____2013-04-04___1.18.39.png)
+* </kbd>⌘,</kbd> Preferencs
 
-### 5. Open Source
+### Preview
+
+![Preview](https://raw.github.com/Witcher42/Me/master/asset/screenshot.png)
+
+### LICENSE
 
 Licensed Under MIT.
